@@ -21,8 +21,8 @@
 ```waveform_file_path```, ```waveforms_generated``` $\rightarrow$ Caminho para o arquivo da onda; quantidade de ondas geradas.
 
 ## Análise visual
+
 ```t``` $\rightarrow$ É o tempo medido em segundos relativo ao valor date_time
---------
 
 ```ekg``` $\rightarrow$ Amplitude do sinal do ECG, em milivolts (mV). Filtro aplicado: 
 
@@ -33,6 +33,7 @@
 ```Notch Chebyshev tipo I``` $\rightarrow$ Elimina os ruídos da rede elétrica
 
 ```dispositivo ``` $\rightarrow$ [ADS1292](https://www.ti.com/product/ADS1292)
+
 --------
 
 ```optical``` $\rightarrow$ Amplitude do sinal óptico (PPG) capturado no momento da medição oscilométrica, expressa em unidade arbitrárias do amplificador, isso é, valores relativos (sem calibração). Dependendo de como a voltagem foi passada para o amplificador, sabe-se que a voltagem é convertida para um número que a depender da configuração eletronica, pode ser como positivo ou negativo. Filtros aplicados:
@@ -42,10 +43,11 @@
 ```Lowpass equiripple``` $\rightarrow$ remove ruídos de alta frequência e interferência elétrica
 
 ```dispositivo ``` $\rightarrow$ [MAX30101](https://www.maximintegrated.com/en/products/interface/signal-integrity/MAX30101.html)
+
 --------
 
 ```acelerômetro``` $\rightarrow$ Os acelerômetros de 3 eixos presentes no dispositivo medem a aceleração em três direções ortogonais (eixos X, Y e Z), 
-permitindo a detecção de movimento e inclinação em 3D de acordo com a força da gravidade
+permitindo a detecção de movimento e inclinação em 3D de acordo com a força da gravidade, monitorando a postura do braço e o nível de atividade. 
 
 ```x``` $\rightarrow$ movimento horizontal
 
@@ -56,6 +58,7 @@ permitindo a detecção de movimento e inclinação em 3D de acordo com a força
 _filtros:_ highpass elliptical filter, lowpass 7th-order elliptical filter
 
 ```dispositivo``` $\rightarrow$ [LSM6DS3](https://www.st.com/en/mems-and-sensors/lsm6ds3tr-c.html)
+
 --------
 
 ```pressão``` $\rightarrow$ Mede a amplitude do sinal tonométrico em milibars (mbar)
