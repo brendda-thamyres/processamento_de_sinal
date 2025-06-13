@@ -25,22 +25,31 @@
 ```t``` $\rightarrow$ É o tempo medido em segundos relativo ao valor date_time
 
 ```ekg``` $\rightarrow$ Amplitude do sinal do ECG, em milivolts (mV). Filtro aplicado: 
+    
+  * DC Block $\rightarrow$ Remove componentes de baixa frequência (<0.1Hz).
+  
+  * Lowpass elíptico $\rightarrow$ remove ruído de alta frequência (passa até 40, corta a partir de 45Hz)
+  
+  * Notch Chebyshev tipo I $\rightarrow$ Elimina os ruídos da rede elétrica: Frequência central em 60Hz, ondulação de 0,1 dB na banda de passagem
 
-```DC Block``` $\rightarrow$ Remove componentes de baixa frequência (<0.1Hz).
+  * dispositivo $\rightarrow$ [ADS1292](https://www.ti.com/product/ADS1292)
 
+<<<<<<< HEAD
 ```Lowpass elíptico``` $\rightarrow$ remove ruído de alta frequência (passa até 40, corta a partir de 45Hz)
 
 ```Notch Chebyshev tipo I``` $\rightarrow$ Elimina os ruídos da rede elétrica
 
 ```dispositivo ``` $\rightarrow$ [ADS1292](https://www.ti.com/product/ADS1292)
 
+=======
+>>>>>>> 20cfc6b9bd30cebff998dc23eafa31fdecd570c1
 --------
 
 ```optical``` $\rightarrow$ Amplitude do sinal óptico (PPG) capturado no momento da medição oscilométrica, expressa em unidade arbitrárias do amplificador, isso é, valores relativos (sem calibração). Dependendo de como a voltagem foi passada para o amplificador, sabe-se que a voltagem é convertida para um número que a depender da configuração eletronica, pode ser como positivo ou negativo. Filtros aplicados:
 
-```Highpass butterworth``` $\rightarrow$  remove ruído de movimento e variações lentas de luz
+* Highpass butterworth $\rightarrow$  remove ruído de movimento e variações lentas de luz: Passa frequências acima de 0.25 Hz;
 
-```Lowpass equiripple``` $\rightarrow$ remove ruídos de alta frequência e interferência elétrica
+* Lowpass equiripple $\rightarrow$ remove ruídos de alta frequência e outras interferências; minimiza o erro máximo, gerando ondulações uniformes (iguais) nas bandas: Banda de passagem até 10 Hz, banda de rejeição a partir de 12 Hz
 
 ```dispositivo ``` $\rightarrow$ [MAX30101](https://www.maximintegrated.com/en/products/interface/signal-integrity/MAX30101.html)
 
@@ -55,7 +64,7 @@ permitindo a detecção de movimento e inclinação em 3D de acordo com a força
 
 ```z``` $\rightarrow$ movimentos na direção perpendicular aos eixos x e y
 
-_filtros:_ highpass elliptical filter, lowpass 7th-order elliptical filter
+_filtros:_ filtro elíptico de alta frequência,  filtro elíptico de baixa frequência de 7ª ordem
 
 ```dispositivo``` $\rightarrow$ [LSM6DS3](https://www.st.com/en/mems-and-sensors/lsm6ds3tr-c.html)
 
@@ -63,6 +72,16 @@ _filtros:_ highpass elliptical filter, lowpass 7th-order elliptical filter
 
 ```pressão``` $\rightarrow$ Mede a amplitude do sinal tonométrico em milibars (mbar)
 
+_filtros:_ 
+
+  * filtro elíptico de alta frequência (deixa passar apenas as frequências acima de um determinado valor): 0.2 Hz de banda de rejeição, 0.3 Hz de banda de passagem, atenuação de 60 dB na banda de rejeição, ondulação de 1 dB na banda de passagem;
+  * filtro elíptico de baixa frequência de 7ª ordem (Passa as frequências abaixo de um determinado valor): 22 Hz de banda de passagem, 6 Hz de banda de rejeição, ondulação de 0,1 dB na banda de passagem;
+
 ```dispositivo``` $\rightarrow$ [MS5803-02BA](https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=MS5803-02BA&DocType=Data+Sheet&DocLang=English)
 
-**É importante destacar que para obter a pressão em mmHg, tem que passar por um processo de escala normalizada**
+---------
+
+#### Referências: 
+Rebecca Mieloszyk et al., “A Comparison of Wearable Tonometry, Photoplethysmography, and Electrocardiography for Cuffless Measurement of Blood Pressure in an Ambulatory Setting,” IEEE Transactions on Biomedical Engineering,
+
+repositótio do AURORA: 
