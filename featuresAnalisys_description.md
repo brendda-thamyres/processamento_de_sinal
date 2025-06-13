@@ -72,4 +72,6 @@ _filtros:_
 ---------
 
 #### Referências: 
-Rebecca Mieloszyk et al., “A Comparison of Wearable Tonometry, Photoplethysmography, and Electrocardiography for Cuffless Measurement of Blood Pressure in an Ambulatory Setting,” IEEE Transactions on Biomedical Engineering
+Rebecca Mieloszyk et al., “A Comparison of Wearable Tonometry, Photoplethysmography, and Electrocardiography for Cuffless Measurement of Blood Pressure in an Ambulatory Setting,” IEEE Transactions on Biomedical Engineering,
+
+repositótio do AURORA: 
